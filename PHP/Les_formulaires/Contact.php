@@ -65,13 +65,13 @@
 
 
         <h1>Vos Coordonnées</h1>
-        <form>
+        <form method="POST" action="script.php">
             <fieldset>
                 <legend></legend>
-                <form method="POST" action="script.php">
+                
                     <div class="form-group">
                         <label for="nom">Nom*</label>
-                        <input type="text" class="form-control" id="nom" placeholder="Veuillez saisir votre nom" required>
+                        <input type="text" class="form-control" id="nom" placeholder="Veuillez saisir votre nom" name ="nom" >
                         <?php
                         if ( isset($_GET["erreur"]) && $_GET["erreur"] == "nom") 
                         {
@@ -82,9 +82,9 @@
                     </div>
                     <div class="form-group">
                         <label for="prenom">Prénom*:</label>
-                        <input type="text" name="prenom" value="<?php if isset($_GET["erreur"]) && $_GET["erreur"] == "prenom") { echo $_GET["valeur"]; ?>" > 
+                        <input type="text" name="prenom" id= "prenom" class ="form-control">
                         <?php
-                        if ( isset($_GET["erreur"]) && $_GET["erreur"] == "prénom") 
+                        if ( isset($_GET["erreur"]) && $_GET["erreur"] == "prenom") 
                         {
                             echo"Le prénom doit être renseigné.";  
                         }
@@ -106,9 +106,9 @@
                     </div>
                     <div class="form-group">
                         <label for="date" class="my-2">Date de naissance*:</label>
-                        <input type="date" class="form-control" id="date" required>
+                        <input type="date" class="form-control" id="ddn" name="ddn" required >
                         <?php
-                        if ( isset($_GET["erreur"]) && $_GET["erreur"] == "date de naissance") 
+                        if ( isset($_GET["erreur"]) && $_GET["erreur"] == "ddn") 
                         {
                             echo"La date de naissance doit être renseigné.";  
                         }
@@ -129,7 +129,7 @@
                     <div class="form-group">
 
                         <label for="adresse">Adresse:</label>
-                        <input type="text" class="form-control" name="Adresse" id="adresse" required>
+                        <input type="text" class="form-control" name="adresse" id="adresse" required>
                         <?php
                         if ( isset($_GET["erreur"]) && $_GET["erreur"] == "adresse") 
                         {
@@ -141,15 +141,15 @@
                     <div class="form-group">
 
                         <label for="ville">Ville:</label>
-                        <input type="text" class="form-control" name="Ville" id="ville" required>
+                        <input type="text" class="form-control" name="ville" id="ville" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email*</label>
-                        <input type="email" class="form-control" id="email" placeholder="email" required>
+                        <input type="text" class="form-control" name="email" id="email" placeholder="email" required>
                         <?php
                         if ( isset($_GET["erreur"]) && $_GET["erreur"] == "email") 
                         {
-                            echo"L/'email doit être renseigné.";  
+                            echo"L'email doit être renseigné.";  
                         }
                         ?>
                     </div>
@@ -175,11 +175,11 @@
                     <div class="form-group">
                         <label for="question">Votre question*:</label>
                         <textarea class="form-control" id="question" rows="3" required></textarea>
-                        <span id='missQuestion'></span>
+                       
                     </div>
                     <div>
                         <input id="checkbox" type="checkbox" required> : J'accepte le traitement informatique de ce formulaire
-                        <span id='missCheckbox'></span>
+                       
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-dark" value="Envoyer" id="bouton_envoi">
@@ -188,6 +188,7 @@
             </fieldset>
             </form>
     </div>
+
     <footer>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
@@ -216,13 +217,12 @@
         </nav>
 
     </footer>
-    </form>
+ 
 
     </p>
-    <script src="Formulaire.js"></script>
+ 
     <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js " integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi " crossorigin="anonymous "></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js " integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585Ac</H49TLBQObG " crossorigin="anonymous "></script>
 
-</body>
-
+    </body>
 </html>
