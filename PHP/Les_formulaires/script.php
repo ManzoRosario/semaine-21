@@ -2,7 +2,7 @@
 $prenom = $_POST['prenom'];  
 $nom = $_POST['nom'];  
 $sexe = $_POST['sexe'];  
-$ddn = $_POST['date de naissance'];  
+$datedenaissance = $_POST['date de naissance'];  
 $codepostal = $_POST['Codepostal'];   
 $email = $_POST['email'];  
 $adresse = $_POST['adresse'];
